@@ -13,11 +13,11 @@ export class NotesService {
         return await newNote.save();
     }
 
-    async getAll(): Promise<Note[]> {
+    async getAll() {
         return await this.noteModel.find().exec();
     }
 
-    async getById(id: number): Promise<Note> {
+    async getById(id: number) {
         return await this.noteModel.findById(id);
     }
 

@@ -13,7 +13,7 @@ export class NotesController {
     }
 
     @Get(':id')
-    getNoteById(@Param('id') id): Promise<Note> {
+    getNoteById(@Param('id') id) {
         return this.notesService.getById(id);
     }
 

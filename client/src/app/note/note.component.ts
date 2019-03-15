@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NoteService } from '../shared/services/note.service';
+import { Note } from '../shared/interfaces';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-note',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note.component.css']
 })
 export class NoteComponent implements OnInit {
-
-  constructor() { }
+  notes$: Observable<Note[]>;
+  notes = [];
+  constructor(private noteService: NoteService) { }
 
   ngOnInit() {
+    this.noteService.fetch()
+      .subscribe(notes => this.notes = notes);
   }
 
 }

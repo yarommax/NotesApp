@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NoteComponent } from './note/note.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NoteService } from './shared/services/note.service';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,10 @@ import { NoteComponent } from './note/note.component';
     NoteComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
