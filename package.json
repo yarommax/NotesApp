@@ -17,7 +17,9 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run start:dev\" \"npm run client\" "
   },
   "dependencies": {
     "@nestjs/common": "^5.4.0",
@@ -38,6 +40,7 @@
     "cors": "^2.8.5",
     "jest": "^23.5.0",
     "morgan": "^1.9.1",
+    "concurrently": "^4.1.0",
     "nodemon": "^1.18.3",
     "prettier": "^1.14.2",
     "supertest": "^3.1.0",

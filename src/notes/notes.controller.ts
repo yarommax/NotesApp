@@ -18,7 +18,7 @@ export class NotesController {
     }
 
     @Post()
-    async createNote(@Body() createNoteDto: CreateNoteDto,@Res() res) {
+    async createNote(@Body() createNoteDto: CreateNoteDto, @Res() res) {
         this.notesService.create(createNoteDto);
     }
 
