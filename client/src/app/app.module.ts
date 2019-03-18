@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NoteComponent } from './note/note.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoteService } from './shared/services/note.service';
+import { AppRoutingModule } from './shared/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { NoteService } from './shared/services/note.service';
     NoteComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule
   ],

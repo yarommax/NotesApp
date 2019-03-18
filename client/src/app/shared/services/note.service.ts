@@ -8,6 +8,6 @@ export class NoteService {
   constructor(private httpClient: HttpClient) {}
 
   fetch(): Observable<Note[]> {
-    return this.httpClient.get<Note[]>('/notes');
+    return this.httpClient.get<Note[]>('api/notes');
   }
 }

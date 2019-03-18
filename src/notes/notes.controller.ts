@@ -3,11 +3,11 @@ import { CreateNoteDto } from './dto/create-note.dto';
 import { NotesService } from './notes.service';
 import { Note } from './interfaces/notes.interface';
 
-@Controller('notes')
+@Controller('api/notes')
 export class NotesController {
     constructor(private readonly notesService: NotesService) {}
 
-    @Get()
+    @Get('')
     getNotes() {
         return this.notesService.getAll();
     }

@@ -9,13 +9,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./note.component.css']
 })
 export class NoteComponent implements OnInit {
-  notes$: Observable<Note[]>;
+
   notes = [];
   constructor(private noteService: NoteService) { }
 
   ngOnInit() {
-    this.noteService.fetch()
-      .subscribe(notes => this.notes = notes);
-  }
-
+    this.noteService.fetch().subscribe(notes => this.notes = notes); }
 }

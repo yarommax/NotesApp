@@ -1,5 +1,5 @@
-.note {
-  display: inline-block;
+.note-card {
+  display: flex;
   border: 1px solid black;
   width: 250px;
   margin: 5px;

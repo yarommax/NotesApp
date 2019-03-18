@@ -1,11 +1,14 @@
 <div>
-  <div class='note'
-  >
-    <h4 class='Note_title'>ghkmdghk</h4>
-    <div class='Note_text'>
-      <p>fdgmfhvmkgfsy,hm</p>
+  <div *ngIf="notes; else empty">
+    <div *ngFor="let note of notes">
+      <div class="note-card d-inline-flex">
+        <h4>{{note.name}}</h4>
+        <p>{{note.description}}</p>
+        <p>{{note.date}}</p>
+      </div>
     </div>
   </div>
+  <ng-template #empty>
+    <p>Заметок нет</p>
+  </ng-template>
 </div>
-
-
