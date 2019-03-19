@@ -6,11 +6,13 @@ import { NoteComponent } from './note/note.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoteService } from './shared/services/note.service';
 import { AppRoutingModule } from './shared/app-routing.module';
+import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoteComponent
+    NoteComponent,
+    SiteLayoutComponent
   ],
   imports: [
     AppRoutingModule,
