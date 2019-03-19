@@ -1,7 +1,10 @@
 <div>
   <div *ngIf="notes; else empty">
-    <div *ngFor="let note of notes">
-      <div class="note-card d-inline-flex">
+    <div 
+      *ngFor="let note of notes" class="note-card"
+      [ngStyle]="{'background-color': note.color}"
+    >
+      <div>
         <h4>{{note.name}}</h4>
         <p>{{note.description}}</p>
         <p>{{note.date}}</p>

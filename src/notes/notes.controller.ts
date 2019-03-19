@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Param, Delete, Body, Query, Put, Res } from '@nestjs/common';
+import { Controller, Get, Post, Param, Delete, Body, HttpCode, Put, Res } from '@nestjs/common';
 import { CreateNoteDto } from './dto/create-note.dto';
 import { NotesService } from './notes.service';
 import { Note } from './interfaces/notes.interface';
@@ -19,7 +19,8 @@ export class NotesController {
 
     @Post()
     async createNote(@Body() createNoteDto: CreateNoteDto, @Res() res) {
-        this.notesService.create(createNoteDto);
+        const newNote = this.notesService.create(createNoteDto);
+        return res.sendStatus(201);
     }
 
     @Put(':id')
