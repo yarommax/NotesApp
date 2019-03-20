@@ -11,13 +11,3 @@
   word-wrap: break-word;
   display: inline-block;
 }
-
-.note-card:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-
-  -webkit-transition: transform 0.4s ease-in-out;
-  -moz-transition:transform 0.4s ease-in-out;
-  -ms-transition:transform 0.4s ease-in-out;
-}

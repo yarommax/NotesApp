@@ -7,17 +7,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoteService } from './shared/services/note.service';
 import { AppRoutingModule } from './shared/app-routing.module';
 import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.component';
+import { NoteEditorComponent } from './note-editor/note-editor.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NoteComponent,
-    SiteLayoutComponent
+    SiteLayoutComponent,
+    NoteEditorComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [NoteService],
   bootstrap: [AppComponent]

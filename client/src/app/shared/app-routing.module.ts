@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from '../app.component';
 import { NoteComponent } from '../note/note.component';
 import { SiteLayoutComponent } from './layouts/site-layout/site-layout.component';
+import { NoteEditorComponent } from '../note-editor/note-editor.component';
 
 const routes: Routes = [
   {
@@ -10,6 +10,7 @@ const routes: Routes = [
       children: [
         {path: '', redirectTo: '/notes', pathMatch: 'full'},
         {path: 'notes', component: NoteComponent},
+        {path: 'newnote', component: NoteEditorComponent},
       ]
   }
 ];
