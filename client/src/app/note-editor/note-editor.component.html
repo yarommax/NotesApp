@@ -1,34 +1,28 @@
 
-<div class="container">
+<div class="container notes-editor">
   <div class="row">
     <div class="col-4">
 
-      <form [formGroup]="noteEditorForm" (ngSubmit)="onSubmit()">
-        <label>
-          Title: <br>
-          <input type="text" formControlName="title">
-        </label><br>
-        <label>
-          Description: <br>
-          <input type="text" formControlName="description">
-        </label><br>
-        <label>
-          Date: <br>
-          <input type="text" formControlName="date">
-        </label><br>
-        <label>
-          Color: <br>
-          <input type="text" formControlName="color">
-        </label><br>
+      <form [formGroup]="noteEditorForm" class="notes-from" (ngSubmit)="onSubmit()">
+          <input type="text" class="form-control" formControlName="title" placeholder="Title">
+          <input type="text" class="form-control" formControlName="description" placeholder="Description">
+          <input type="text" class="form-control" formControlName="color" placeholder="Color">
+
+          <div>
+            <button 
+              type="submit" 
+              class="btn btn-dark"
+              [disabled]="form.invalid || form.disabled" 
+            >Save</button>
+          </div>          
       </form>
     </div>
     <div class="col-8">
       <div class="row">
-        <div class="note-card col-sm-4" [ngStyle]="{'background-color': noteEditorForm.value.color}">
+        <div class="note-card col-sm-6" [ngStyle]="{'background-color': noteEditorForm.value.color}">
           <div>
             <h4>{{noteEditorForm.value.title}}</h4>
             <p>{{noteEditorForm.value.description}}</p>
-            <p>{{noteEditorForm.value.date}}</p>
           </div>
         </div>
       </div>

@@ -1,3 +1,11 @@
+.notes-editor {
+  margin-top: 25px;
+}
+
+.notes-from input {
+  margin-bottom: 10px;
+}
+
 .note-card {
   width: 250px;
   height: auto;
