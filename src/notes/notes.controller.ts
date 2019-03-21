@@ -18,9 +18,8 @@ export class NotesController {
     }
 
     @Post()
-    async createNote(@Body() createNoteDto: CreateNoteDto, @Res() res) {
-        const newNote = this.notesService.create(createNoteDto);
-        return res.sendStatus(201);
+    async createNote(@Body() createNoteDto: CreateNoteDto) {
+        return this.notesService.create(createNoteDto);
     }
 
     @Put(':id')
@@ -28,9 +27,8 @@ export class NotesController {
         return 'update note';
     }
 
-    @Delete(':id')
-    deleteNote(@Param('id') id) {
-        this.notesService.delete(id);
+    @Delete()
+    deleteNote(@Body() id) {
+        return this.notesService.delete(id);
     }
-
 }

@@ -1,6 +1,6 @@
 export interface Note {
-  name: string;
+  title: string;
   description: string;
-  date: Date;
+  date?: Date;
   color: string;
 }

@@ -1,17 +1,20 @@
 <div>
   <div *ngIf="notes; else empty">
     <div class="row">
-    <div
-      *ngFor="let note of notes" class="note-card col-sm-3"
-      [ngStyle]="{'background-color': note.color}"
-    >
+      <div
+        *ngFor="let note of notes" class="note-card col-sm-3"
+       [ngStyle]="{'background-color': note.color}"
+      >
+      <span
+        (click)="onDeletePosition($event, note)"
+      >x</span>
       <div>
         <h4>{{note.name}}</h4>
         <p>{{note.description}}</p>
-        <p>{{note.date}}</p>
+        <p>{{note.date | date: 'dd.MM.yyyy HH.mm' }}</p>
       </div>
     </div>
-  </div>
+    </div>
   </div>
   <ng-template #empty>
     <p>Заметок нет</p>

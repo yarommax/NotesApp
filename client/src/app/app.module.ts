@@ -15,15 +15,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     NoteComponent,
     SiteLayoutComponent,
-    NoteEditorComponent
+    NoteEditorComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [NoteService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

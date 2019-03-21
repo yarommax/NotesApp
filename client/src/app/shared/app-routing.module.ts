@@ -11,10 +11,9 @@ const routes: Routes = [
         {path: '', redirectTo: '/notes', pathMatch: 'full'},
         {path: 'notes', component: NoteComponent},
         {path: 'newnote', component: NoteEditorComponent},
-      ]
-  }
+      ],
+  },
 ];
-
 
 @NgModule({
   imports: [

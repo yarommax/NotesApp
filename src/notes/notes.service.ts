@@ -21,8 +21,7 @@ export class NotesService {
         return await this.noteModel.findById(id);
     }
 
-    async delete(id: number) {
-        return await this.noteModel.findByIdAndDelete(id);
+    async delete(id) {
+        return await this.noteModel.deleteOne(id);
     }
-
 }

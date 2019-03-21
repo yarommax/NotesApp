@@ -19,3 +19,18 @@
   word-wrap: break-word;
   display: inline-block;
 }
+
+.color-set {
+  display: inline-block;
+}
+.color-btn {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #aeaeae;
+}
+
+.color-btn:hover {
+  border: 1px solid #AD89AE;
+  background-color: rgba(0,0,0,1);
+}
