@@ -1,7 +1,7 @@
-import { Controller, Get, Post, Param, Delete, Body, HttpCode, Put, Res } from '@nestjs/common';
+import { Controller, Get, Post, Param, Delete, Body, Put } from '@nestjs/common';
 import { CreateNoteDto } from './dto/create-note.dto';
 import { NotesService } from './notes.service';
-import { Note } from './interfaces/notes.interface';
+import { Query } from '@nestjs/common/decorators/http/route-params.decorator';
 
 @Controller('api/notes')
 export class NotesController {
@@ -27,8 +27,8 @@ export class NotesController {
         return 'update note';
     }
 
-    @Delete()
-    deleteNote(@Body() id) {
+    @Delete(':id')
+    deleteNote(@Param('id') id) {
         return this.notesService.delete(id);
     }
 }

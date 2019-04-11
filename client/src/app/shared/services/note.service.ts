@@ -5,6 +5,7 @@ import { Note } from '../interfaces';
 
 @Injectable()
 export class NoteService {
+  notesUrl = 'api/notes';
   constructor(private httpClient: HttpClient) {}
 
   fetch(): Observable<Note[]> {
@@ -16,6 +17,7 @@ export class NoteService {
   }
 
   deleteNote(note) {
-    return this.httpClient.delete('api/notes', note._id);
+    const url = `${this.notesUrl}/${note._id}`;
+    return this.httpClient.delete(url);
   }
 }

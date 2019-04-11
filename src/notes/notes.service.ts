@@ -22,6 +22,6 @@ export class NotesService {
     }
 
     async delete(id) {
-        return await this.noteModel.deleteOne(id);
+        return await this.noteModel.remove({_id: id});
     }
 }

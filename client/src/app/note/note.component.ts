@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteService } from '../shared/services/note.service';
 import { Note } from '../shared/interfaces';
-import { Observable } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-note',
@@ -10,18 +11,21 @@ import { Observable } from 'rxjs';
 })
 export class NoteComponent implements OnInit {
 
-  notes = [];
+  notes: Note[] = [];
   constructor(private noteService: NoteService) { }
 
   ngOnInit() {
-    this.noteService.fetch().subscribe(notes => this.notes = notes);
+    this.noteService.fetch().subscribe(notes => {
+      this.notes = notes;
+    });
   }
 
   onDeletePosition(event: Event, note: Note) {
     event.stopPropagation();
     this.noteService.deleteNote(note).subscribe(
       response => {
-        console.log(response);
+        const index = this.notes.findIndex(item => item._id === note._id);
+        this.notes.splice(index, 1);
       });
   }
 }

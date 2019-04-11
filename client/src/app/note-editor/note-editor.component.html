@@ -3,31 +3,33 @@
   <div class="row">
     <div class="col-4">
 
-      <form [formGroup]="form" class="notes-from" (ngSubmit)="onSubmit()">
-          <input type="text" class="form-control" formControlName="title" placeholder="Title">
-          <input type="text" class="form-control" formControlName="description" placeholder="Description">
-          <div *ngFor="let color of colors" class="color-set">
-            <div class="color-btn" [ngStyle]="{'background-color': color}"></div>
-          </div>
+      <form [formGroup]="form" class="notes-form" (ngSubmit)="onSubmit()">
+        <input type="text" class="form-control" formControlName="title" placeholder="Title">
+        <textarea class="form-control" formControlName="description" cols="45" rows="7" placeholder="Description"></textarea>
+        <div *ngFor="let color of colors" class="color-set">
+          <div
+            class="color-btn"
+            [ngStyle]="{'background-color': color}"
+            (click)="chooseColor($event, color)"
+          ></div>
+        </div>
 
-          <div>
-            <button
-              type="submit"
-              class="btn btn-dark"
-              [disabled]="form.invalid || form.disabled"
-            >Save</button>
-          </div>
+        <div>
+          <button
+            type="submit"
+            class="btn btn-dark"
+            [disabled]="form.disabled"
+          >Save</button>
+        </div>
       </form>
     </div>
-    <div class="col-4">
-      <div class="row">
-        <div class="note-card col-sm-6" [ngStyle]="{'background-color': form.value.color}">
+    <div class="col-5">
+        <div class="note-card col-6" [ngStyle]="{'background-color': chosedColor}">
           <div>
             <h4>{{form.value.title}}</h4>
             <p>{{form.value.description}}</p>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>

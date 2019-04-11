@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { NoteService } from '../shared/services/note.service';
 import { Router } from '@angular/router';
@@ -14,6 +14,7 @@ export class NoteEditorComponent implements OnInit {
 
   form: FormGroup;
   colors = ['#FFFFFF', '#80D8FF', '#FFFF8D', '#FF8A80', '#CCFF90', '#CFD8DC', '#FFD180'];
+  chosedColor = null;
 
   constructor(private noteService: NoteService,
               private router: Router) { }
@@ -26,21 +27,31 @@ export class NoteEditorComponent implements OnInit {
     });
   }
 
+  chooseColor(event, color) {
+    event.stopPropagation();
+    this.chosedColor = color;
+  }
   onSubmit() {
+    this.form.disable();
     let obs$;
 
     const body: Note = {
       title: this.form.value.title,
       description: this.form.value.description,
-      color: this.form.value.color,
+      color: this.chosedColor,
     };
 
     obs$ = this.noteService.createNote(body);
 
     obs$.subscribe(
       note => {
+        this.form.reset();
         console.log('created');
-      }
+      },
+      error => {
+        console.log(error);
+      },
+      this.form.enable()
     );
   }
 }
