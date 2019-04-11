@@ -3,4 +3,5 @@ export interface Note {
   description: string;
   date?: Date;
   color: string;
+  _id?: string;
 }

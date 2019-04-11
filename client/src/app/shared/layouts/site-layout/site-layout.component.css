@@ -1,13 +1,9 @@
 li {
     list-style-type: none;
     display: inline-block;
-    margin: 5px 15px 
+    margin: 5px 15px
 }
 
 a {
     color: black;
-}
-
-.navbar {
-    background-color: blue;
 }
