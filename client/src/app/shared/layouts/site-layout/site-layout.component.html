@@ -1,22 +1,33 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a routerLink="/notes" class="navbar-brand">draft<span class="logo-title">.</span></a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/notes">board <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/newnote">create</a>
-        </li>
-      </ul>
-      <!--<form class="form-inline my-2 my-lg-0">-->
-        <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-        <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-      <!--</form>-->
+    <div class="row">
+      <a routerLink="/notes" class="navbar-brand">draft<span class="logo-title">.</span></a>
+      <div class=" navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/notes">board</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/newnote">create</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>
+
+<div class="flex-container">
+  <a routerLink="/notes" class="navbar-brand">draft<span class="logo-title">.</span></a>
+  <ul>
+    <li>
+      <a routerLink="/notes">board</a>
+    </li>
+    <li>
+      <a routerLink="/newnote">create</a>
+    </li>
+  </ul>
+</div>
+
 
 
 <div class="container">
