@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
 .note-card {
   width: 250px;
   height: auto;
@@ -14,13 +19,14 @@
 }
 
 .note-card:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
+  /*-webkit-transform: scale(1.05);*/
+  /*-ms-transform: scale(1.05);*/
+  /*transform: scale(1.05);*/
 
-  -webkit-transition: transform 0.2s ease-in-out;
-  -moz-transition:transform 0.2s ease-in-out;
-  -ms-transition:transform 0.2s ease-in-out;
+  /*-webkit-transition: transform 0.5s ease-in-out;*/
+  /*-moz-transition:transform 0.5s ease-in-out;*/
+  /*-ms-transition:transform 0.5s ease-in-out;*/
+  ;
 }
 .delete-btn {
   color: #061529;
@@ -32,7 +38,7 @@
 
 .noteTitle {
   padding-bottom: 5px;
-  border-bottom: 1px solid #aeaeae;
+  border-bottom: 1px solid #bebebe;
 }
 
 .delete-btn {

@@ -9,6 +9,9 @@ import { AppRoutingModule } from './shared/app-routing.module';
 import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.component';
 import { NoteEditorComponent } from './note-editor/note-editor.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthLayoutComponent } from './shared/layouts/auth-layout/auth-layout.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { RegistrationPageComponent } from './registration-page/registration-page.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     NoteComponent,
     SiteLayoutComponent,
     NoteEditorComponent,
+    AuthLayoutComponent,
+    LoginPageComponent,
+    RegistrationPageComponent,
   ],
   imports: [
     AppRoutingModule,
