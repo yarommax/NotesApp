@@ -18,3 +18,17 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.color-set {
+  margin: 15px 0 0 10px;
+}
+.color-set div {
+  display: inline-block;
+}
+
+.editor button {
+  margin-top: -30px;
+}
+
+
+
