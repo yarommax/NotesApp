@@ -1,0 +1,4 @@
+.note-card:hover {
+  /*box-shadow: 0 0 11px rgba(33,33,33,.2);*/
+  box-shadow: 12px 12px 2px 1px rgba(143, 146, 226, 0.3);
+}

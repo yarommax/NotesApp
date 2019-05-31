@@ -19,7 +19,7 @@ export class NotesController {
 
     @Post()
     async createNote(@Body() createNoteDto: CreateNoteDto) {
-        return this.notesService.create(createNoteDto);
+        return await this.notesService.create(createNoteDto);
     }
 
     @Put(':id')

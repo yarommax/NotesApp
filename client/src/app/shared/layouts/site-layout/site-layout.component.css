@@ -4,11 +4,3 @@ li {
     display: inline-block;
     margin: 5px 15px
 }
-
-a {
-    color: black;
-}
-.flex-container {
-  display: flex;
-  flex-direction: row;
-}
