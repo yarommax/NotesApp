@@ -16,7 +16,7 @@ export class NoteComponent implements OnInit {
 
   ngOnInit() {
     this.noteService.fetch().subscribe(notes => {
-      this.notes = notes;
+      this.notes = notes.reverse();
     });
   }
 

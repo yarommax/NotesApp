@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NoteService } from '../shared/services/note.service';
 import { Router } from '@angular/router';
 import { Note } from '../shared/interfaces';
+import { validate } from 'codelyzer/walkerFactory/walkerFn';
 
 @Component({
   selector: 'app-note-editor',
@@ -15,14 +16,16 @@ export class NoteEditorComponent implements OnInit {
   form: FormGroup;
   colors = ['#FFFFFF', '#80D8FF', '#FFFF8D', '#FF8A80', '#CCFF90', '#CFD8DC', '#FFD180'];
   chosedColor = null;
+  alert = false;
+  alertMessage = '';
 
   constructor(private noteService: NoteService,
               private router: Router) { }
 
   ngOnInit() {
     this.form = new FormGroup({
-      title : new FormControl(''),
-      description : new FormControl(''),
+      title : new FormControl('', Validators.required),
+      description : new FormControl('', Validators.required),
       color: new FormControl(''),
     });
   }
@@ -46,12 +49,22 @@ export class NoteEditorComponent implements OnInit {
     obs$.subscribe(
       note => {
         this.form.reset();
-        console.log('created');
+        this.showAlert('Note created');
       },
       error => {
-        console.log(error);
+        this.showAlert(error.error.message);
       },
       this.form.enable()
     );
+  }
+
+  showAlert(message: string) {
+    this.alertMessage = message;
+    this.alert = true;
+    setTimeout( () => {
+      if (this.alert) {
+        this.alert = false;
+      }
+    }, 1000);
   }
 }
